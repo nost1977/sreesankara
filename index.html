@@ -85,11 +85,6 @@
         .feature-card:hover { transform: translateY(-5px); }
         .feature-card h4 { color: var(--maroon); font-size: 1.2rem; margin-bottom: 1rem; }
         .feature-card p { font-size: 0.95rem; margin-bottom: 0; }
-        
-        /* Teacher Cards (Slightly smaller padding than feature cards) */
-        .teacher-card { background-color: var(--white); padding: 1.5rem; text-align: center; border-bottom: 4px solid var(--navy); box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 4px; }
-        .teacher-card h4 { color: var(--navy); font-size: 1.15rem; margin-bottom: 0.5rem; }
-        .teacher-card p { font-size: 0.9rem; color: var(--maroon); font-weight: 600; margin-bottom: 0; }
 
         /* --- Values List --- */
         .values-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
@@ -128,20 +123,22 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="#">
-                    <h1 data-en="Sree Sankara Vidyamandiram" data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം">Sree Sankara Vidyamandiram</h1>
-                    <span data-en="KALPETTA, WAYANAD" data-ml="കല്പറ്റ, വയനാട്">KALPETTA, WAYANAD</span>
+                <a href="#" style="display: flex; align-items: center; gap: 15px;">
+                    <img src="logo.jpg" alt="Logo" style="height: 55px; width: auto; border-radius: 4px;">
+                    <div>
+                        <h1 data-en="Sree Sankara Vidyamandiram" data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം">Sree Sankara Vidyamandiram</h1>
+                        <span data-en="KALPETTA, WAYANAD" data-ml="കല്പറ്റ, വയനാട്">KALPETTA, WAYANAD</span>
+                    </div>
                 </a>
             </div>
             <nav>
                 <ul>
                     <li><a href="#about" data-en="About" data-ml="ഞങ്ങളെക്കുറിച്ച്">About</a></li>
                     <li><a href="#academics" data-en="Academics" data-ml="പഠനം">Academics</a></li>
-                    <li><a href="#faculty" data-en="Faculty" data-ml="അധ്യാപകർ">Faculty</a></li>
                     <li><a href="#holistic" data-en="Holistic Growth" data-ml="സമഗ്ര വളർച്ച">Holistic Growth</a></li>
                     <li><a href="#facilities" data-en="Facilities" data-ml="സൗകര്യങ്ങൾ">Facilities</a></li>
                     <li><a href="#gallery" data-en="Gallery" data-ml="ചിത്രശാല">Gallery</a></li>
-                    <li><a href="tel:6238785488" class="nav-cta" data-en="Admissions" data-ml="അഡ്മിഷൻ">Admissions</a></li>
+                    <li><a href="tel:9744124309" class="nav-cta" data-en="Admissions" data-ml="അഡ്മിഷൻ">Admissions</a></li>
                 </ul>
                 <button id="langBtn" onclick="toggleLanguage()">മലയാളം</button>
             </nav>
@@ -153,7 +150,7 @@
         <h1 data-en="Rooted in Values, Growing in Excellence" data-ml="മൂല്യങ്ങളിൽ വേരൂന്നി, മികവിൽ വളരുന്നു">Rooted in Values, Growing in Excellence</h1>
         <p data-en="Providing a nurturing, disciplined, and inspiring learning environment guided by the educational vision of Bharatheeya Vidyanikethan." data-ml="ഭാരതീയ വിദ്യാനികേതൻ്റെ വിദ്യാഭ്യാസ ദർശനത്താൽ നയിക്കപ്പെടുന്ന ഒരു പഠനാന്തരീക്ഷം.">Providing a nurturing, disciplined, and inspiring learning environment guided by the educational vision of Bharatheeya Vidyanikethan.</p>
         <div class="hero-buttons">
-            <a href="tel:6238785488" class="btn btn-primary" data-en="Call to Enquire: 6238785488" data-ml="വിളിക്കാൻ: 6238785488">Call to Enquire: 6238785488</a>
+            <a href="tel:9744124309" class="btn btn-primary" data-en="Call to Enquire: 9744124309" data-ml="വിളിക്കാൻ: 9744124309">Call to Enquire: 9744124309</a>
             <a href="#about" class="btn btn-outline" data-en="Explore the School" data-ml="കൂടുതൽ അറിയാൻ">Explore the School</a>
         </div>
     </section>
@@ -184,7 +181,7 @@
     <section class="section-padding" id="about">
         <div class="container split-section">
             <div class="split-image">
-                <img src="photo10.png" alt="School Campus Environment">
+                <img src="photo2.jpeg" alt="School Campus Environment">
             </div>
             <div class="split-text">
                 <h3 data-en="A Respected Institution in Wayanad" data-ml="വയനാട്ടിലെ ഒരു മികച്ച വിദ്യാഭ്യാസ സ്ഥാപനം">A Respected Institution in Wayanad</h3>
@@ -220,34 +217,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="faculty">
-        <div class="container">
-            <div class="section-title">
-                <h2 data-en="Our Dedicated Faculty" data-ml="ഞങ്ങളുടെ അധ്യാപകർ">Our Dedicated Faculty</h2>
-                <p data-en="Experienced and passionate educators guiding our students." data-ml="വിദ്യാർത്ഥികളെ നയിക്കുന്ന പരിചയസമ്പന്നരായ അധ്യാപകർ.">Experienced and passionate educators guiding our students.</p>
-            </div>
-            <div class="grid-4">
-                <div class="teacher-card">
-                    <h4 data-en="[Teacher Name 1]" data-ml="[അധ്യാപകന്റെ പേര് 1]">[Teacher Name 1]</h4>
-                    <p data-en="Subject / Role" data-ml="വിഷയം / ചുമതല">Subject / Role</p>
-                </div>
-                <div class="teacher-card">
-                    <h4 data-en="[Teacher Name 2]" data-ml="[അധ്യാപകന്റെ പേര് 2]">[Teacher Name 2]</h4>
-                    <p data-en="Subject / Role" data-ml="വിഷയം / ചുമതല">Subject / Role</p>
-                </div>
-                <div class="teacher-card">
-                    <h4 data-en="[Teacher Name 3]" data-ml="[അധ്യാപകന്റെ പേര് 3]">[Teacher Name 3]</h4>
-                    <p data-en="Subject / Role" data-ml="വിഷയം / ചുമതല">Subject / Role</p>
-                </div>
-                <div class="teacher-card">
-                    <h4 data-en="[Teacher Name 4]" data-ml="[അധ്യാപകന്റെ പേര് 4]">[Teacher Name 4]</h4>
-                    <p data-en="Subject / Role" data-ml="വിഷയം / ചുമതല">Subject / Role</p>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section class="section-padding bg-beige" id="holistic">
+    <section class="section-padding" id="holistic">
         <div class="container">
             <div class="section-title">
                 <h2 data-en="Holistic Education" data-ml="സമഗ്ര വിദ്യാഭ്യാസം">Holistic Education</h2>
@@ -274,7 +244,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="facilities">
+    <section class="section-padding bg-beige" id="facilities">
         <div class="container split-section">
             <div class="split-text">
                 <h3 data-en="Our Learning Environment" data-ml="ഞങ്ങളുടെ പഠനാന്തരീക്ഷം">Our Learning Environment</h3>
@@ -287,15 +257,16 @@
         </div>
     </section>
 
+    <!-- Sponsorship Banner -->
     <section class="sponsor-banner" id="sponsor">
         <div class="container">
             <h2 data-en="Sponsor a Child's Education" data-ml="ഒരു വിദ്യാർത്ഥിയെ സ്പോൺസർ ചെയ്യുക">Sponsor a Child's Education</h2>
             <p data-en="Sree Sankara Vidyamandiram is deeply rooted in Indian traditions and values. Many of our bright students come from economically backward families in our region. You can make a profound difference by sponsoring a child's education for one academic year with a small contribution. If you wish to offer your support and consent, please contact the school administration." data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം ഭാരതീയ പാരമ്പര്യങ്ങളിലും മൂല്യങ്ങളിലും വേരൂന്നിയതാണ്. നമ്മുടെ മിടുക്കരായ പല വിദ്യാർത്ഥികളും സാമ്പത്തികമായി പിന്നോക്കം നിൽക്കുന്ന കുടുംബങ്ങളിൽ നിന്നുള്ളവരാണ്. ഒരു ചെറിയ സംഭാവന നൽകി ഒരു കുട്ടിയുടെ ഒരു വർഷത്തെ വിദ്യാഭ്യാസച്ചെലവ് സ്പോൺസർ ചെയ്യുന്നതിലൂടെ നിങ്ങൾക്ക് അവരുടെ ജീവിതത്തിൽ വലിയ മാറ്റം വരുത്താൻ സാധിക്കും. നിങ്ങൾക്ക് പിന്തുണ നൽകാൻ താല്പര്യമുണ്ടെങ്കിൽ ദയവായി സ്കൂൾ അഡ്മിനിസ്ട്രേഷനുമായി ബന്ധപ്പെടുക.">Sree Sankara Vidyamandiram is deeply rooted in Indian traditions and values. Many of our bright students come from economically backward families in our region. You can make a profound difference by sponsoring a child's education for one academic year with a small contribution. If you wish to offer your support and consent, please contact the school administration.</p>
-            <a href="tel:6238785488" class="btn" style="background-color: var(--gold); color: var(--navy); border: none;" data-en="Call to Sponsor: 6238785488" data-ml="സ്പോൺസർ ചെയ്യാൻ വിളിക്കുക: 6238785488">Call to Sponsor: 6238785488</a>
+            <a href="tel:9744124309" class="btn" style="background-color: var(--gold); color: var(--navy); border: none;" data-en="Call to Sponsor: 9744124309" data-ml="സ്പോൺസർ ചെയ്യാൻ വിളിക്കുക: 9744124309">Call to Sponsor: 9744124309</a>
         </div>
     </section>
 
-    <section class="section-padding bg-beige" id="gallery">
+    <section class="section-padding" id="gallery">
         <div class="container">
             <div class="section-title">
                 <h2 data-en="Campus Life & Gallery" data-ml="ക്യാമ്പസ് ചിത്രങ്ങൾ">Campus Life & Gallery</h2>
@@ -329,7 +300,7 @@
                 <h4 data-en="Contact Us" data-ml="ബന്ധപ്പെടുക">Contact Us</h4>
                 <p data-en="Kalpetta, Wayanad, Kerala – 673122" data-ml="കല്പറ്റ, വയനാട്, കേരളം – 673122">Kalpetta, Wayanad,<br>Kerala – 673122</p>
                 <p style="margin-top: 1rem;" data-en="Phone:" data-ml="ഫോൺ:">Phone:</p>
-                <a href="tel:6238785488">6238785488</a>
+                <a href="tel:9744124309">9744124309</a>
                 <a href="tel:8075986122">8075986122</a>
                 <p style="margin-top: 1rem;" data-en="Email:" data-ml="ഇമെയിൽ:">Email:</p>
                 <a href="mailto:sreesankaravidhyanikethan43@gmail.com" style="word-break: break-all;">sreesankaravidhyanikethan43@gmail.com</a>
@@ -337,7 +308,7 @@
             <div class="footer-col">
                 <h4 data-en="Admissions" data-ml="അഡ്മിഷൻ">Admissions</h4>
                 <p data-en="Admissions are open for Pre-KG to Class 7. Contact our administration office directly via phone to begin the simple admission process." data-ml="പ്രീ-കെജി മുതൽ ഏഴാം ക്ലാസ്സ് വരെ അഡ്മിഷൻ തുടരുന്നു. കൂടുതൽ വിവരങ്ങൾക്കായി ഫോൺ വഴി ഞങ്ങളുടെ ഓഫീസുമായി ബന്ധപ്പെടുക.">Admissions are open for Pre-KG to Class 7. Contact our administration office directly via phone to begin the simple admission process.</p>
-                <a href="tel:6238785488" class="btn btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" data-en="Call: 6238785488" data-ml="വിളിക്കുക: 6238785488">Call: 6238785488</a>
+                <a href="tel:9744124309" class="btn btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" data-en="Call: 9744124309" data-ml="വിളിക്കുക: 9744124309">Call: 9744124309</a>
             </div>
         </div>
         <div class="footer-bottom">
