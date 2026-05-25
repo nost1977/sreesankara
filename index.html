@@ -81,10 +81,17 @@
 
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        
         .feature-card { background-color: var(--white); padding: 2.5rem; text-align: center; border-top: 4px solid var(--navy); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
         .feature-card:hover { transform: translateY(-5px); }
         .feature-card h4 { color: var(--maroon); font-size: 1.2rem; margin-bottom: 1rem; }
         .feature-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+        /* --- Panchanga Pillars Grid --- */
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .pillar-item { background: var(--beige); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--gold); text-align: left; }
+        .pillar-item h4 { color: var(--navy); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .pillar-item p { font-size: 0.95rem; margin-bottom: 0; color: var(--text-dark); line-height: 1.5; }
 
         /* --- Values List --- */
         .values-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
@@ -223,6 +230,38 @@
                 <h2 data-en="Holistic Education" data-ml="സമഗ്ര വിദ്യാഭ്യാസം">Holistic Education</h2>
                 <p data-en="Developing the Child Intellectually, Physically, Socially, Morally, and Spiritually" data-ml="കുട്ടികളുടെ ബൗദ്ധികവും ശാരീരികവും ധാർമ്മികവും ആത്മീയവുമായ വികസനം">Developing the Child Intellectually, Physically, Socially, Morally, and Spiritually</p>
             </div>
+            
+            <div style="max-width: 1000px; margin: 0 auto 4rem auto; padding: 2.5rem; background-color: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 8px;">
+                <h3 data-en="The 5 Pillars of Panchanga Shikshan" data-ml="പഞ്ചാംഗ ശിക്ഷണം: പ്രധാന അഞ്ച് ഘടകങ്ങൾ" style="text-align: center; color: var(--maroon); margin-bottom: 1.5rem; font-size: 1.8rem;">The 5 Pillars of Panchanga Shikshan</h3>
+                
+                <p data-en="At Vidyanikethan schools, Panchanga Shikshan is integrated with regular academics to instill a profound sense of values. The guiding principle is that textbook education alone is insufficient for holistic development. The primary objective is to nurture children based on Indian culture and values. The five core components are:" data-ml="വിദ്യാനികേതൻ വിദ്യാലയങ്ങളിൽ വിദ്യാർത്ഥികളിൽ മൂല്യബോധം വളർത്തുന്നതിനായി പഠനത്തോടൊപ്പം പഞ്ചാംഗ ശിക്ഷണവും നൽകി വരുന്നു. കുട്ടികളുടെ സമ്പൂർണ്ണ വളർച്ചയ്ക്ക് പാഠപുസ്തകങ്ങളിലൂടെ ലഭിക്കുന്ന വിദ്യാഭ്യാസം മാത്രം പോരാ എന്നതാണ് ഇതിന്റെ അടിസ്ഥാന തത്വം. ഭാരതീയ സംസ്കാരവും മൂല്യങ്ങളും അടിസ്ഥാനമാക്കി കുട്ടികളെ വളർത്തിയെടുക്കുക എന്നതാണ് ഇതിന്റെ പ്രധാന ലക്ഷ്യം. പഞ്ചാംഗ ശിക്ഷണത്തിലെ പ്രധാന അഞ്ച് ഘടകങ്ങൾ:" style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; color: var(--text-dark);">
+                    At Vidyanikethan schools, Panchanga Shikshan is integrated with regular academics to instill a profound sense of values. The guiding principle is that textbook education alone is insufficient for holistic development. The primary objective is to nurture children based on Indian culture and values. The five core components are:
+                </p>
+
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <h4 data-en="Physical Education (ശാരീരികം)" data-ml="ശാരീരികം (Physical Education)">Physical Education (ശാരീരികം)</h4>
+                        <p data-en="Exercises and sports training aimed at increasing children's physical fitness and vitality." data-ml="കുട്ടികളുടെ കായികക്ഷമതയും ഊർജ്ജസ്വലതയും വർദ്ധിപ്പിക്കുന്നതിനുള്ള വ്യായാമങ്ങളും കായിക പരിശീലനങ്ങളും.">Exercises and sports training aimed at increasing children's physical fitness and vitality.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Yoga (യോഗ)" data-ml="യോഗ (Yoga)">Yoga (യോഗ)</h4>
+                        <p data-en="Yogasanas and pranayama practice designed to enhance mental concentration and health." data-ml="മനസ്സിന്റെ ഏകാഗ്രതയ്ക്കും ആരോഗ്യത്തിനും ഉതകുന്ന യോഗാസനങ്ങളും പ്രാണായാമ പരിശീലനവും.">Yogasanas and pranayama practice designed to enhance mental concentration and health.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Music (സംഗീതം)" data-ml="സംഗീതം (Music)">Music (സംഗീതം)</h4>
+                        <p data-en="Training in light music, patriotic songs, and classical music to foster creativity in children." data-ml="കുട്ടികളിൽ സർഗ്ഗാത്മകത വളർത്താനായി ലളിതഗാനങ്ങൾ, ദേശഭക്തിഗാനങ്ങൾ, ശാസ്ത്രീയ സംഗീതം എന്നിവയുടെ പരിശീലനം.">Training in light music, patriotic songs, and classical music to foster creativity in children.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Sanskrit (സംസ്കൃതം)" data-ml="സംസ്കൃതം (Sanskrit)">Sanskrit (സംസ്കൃതം)</h4>
+                        <p data-en="Learning Sanskrit to deeply understand Indian heritage and gain linguistic proficiency." data-ml="ഭാരതീയ പൈതൃകം മനസ്സിലാക്കാനും ഭാഷാപരിജ്ഞാനം നേടാനുമുള്ള സംസ്കൃത പഠനം.">Learning Sanskrit to deeply understand Indian heritage and gain linguistic proficiency.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Moral Education (നൈതികം)" data-ml="നൈതികം (Moral Education)">Moral Education (നൈതികം)</h4>
+                        <p data-en="Value-based education to cultivate ethical values, patriotism, and good virtues in children." data-ml="ധാർമ്മികമൂല്യങ്ങൾ, ദേശസ്നേഹം, സദ്ഗുണങ്ങൾ എന്നിവ കുട്ടികളിൽ വളർത്തിയെടുക്കുന്നതിനുള്ള മൂല്യാധിഷ്ഠിത വിദ്യാഭ്യാസം.">Value-based education to cultivate ethical values, patriotism, and good virtues in children.</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid-4">
                 <div class="feature-card">
                     <h4 data-en="Physical Education & Yoga" data-ml="കായികവിദ്യാഭ്യാസവും യോഗയും">Physical Education & Yoga</h4>
@@ -257,7 +296,6 @@
         </div>
     </section>
 
-    <!-- Sponsorship Banner -->
     <section class="sponsor-banner" id="sponsor">
         <div class="container">
             <h2 data-en="Sponsor a Child's Education" data-ml="ഒരു വിദ്യാർത്ഥിയെ സ്പോൺസർ ചെയ്യുക">Sponsor a Child's Education</h2>
