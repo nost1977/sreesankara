@@ -1,6 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
+<head><!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sree Sankara Vidyamandiram | Kalpetta, Wayanad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Color Palette & Variables --- */
+        :root {
+            --navy: #0f2541;
+            --navy-light: #1a3a63;
+            --ivory: #fcfbf8;
+            --beige: #f4eee1;
+            --maroon: #801515;
+            --gold: #c5a059;
+            --text-dark: #2c2c2c;
+            --text-light: #555555;
+            --white: #ffffff;
+            
+            --font-heading: 'Cinzel', serif;
+            --font-subheading: 'Lora', serif;
+            --font-body: 'Source Sans 3', sans-serif;
+            --font-ml: 'Noto Sans Malayalam', sans-serif;
+        }
+
+        /* --- Base Reset & Typography --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--ivory); line-height: 1.6; }
+        
+        /* Language Class Toggle */
+        body.lang-ml, body.lang-ml p, body.lang-ml a, body.lang-ml span, body.lang-ml li { font-family: var(--font-ml); }
+        body.lang-ml h1, body.lang-ml h2, body.lang-ml h3, body.lang-ml h4 { font-family: var(--font-ml); }
+
+        h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--navy); margin-bottom: 1rem; }
+        p { margin-bottom: 1rem; color: var(--text-light); font-size: 1.05rem; }
+        a { text-decoration: none; color: var(--navy); transition: color 0.3s ease; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-padding { padding: 5rem 0; }
+
+        /* --- Buttons --- */
+        .btn { display: inline-block; padding: 0.8rem 2rem; font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 3px; transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--maroon); color: var(--white); }
+        .btn-primary:hover { background-color: var(--navy); color: var(--white); }
+        .btn-outline { background-color: transparent; border-color: var(--white); color: var(--white); }
+        .btn-outline:hover { background-color: var(--white); color: var(--navy); }
+
+        /* --- Header & Navigation --- */
+        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1400px; margin: 0 auto; position: relative; }
+        .header-logo { height: 55px; width: auto; border-radius: 4px; }
+        .logo h1 { font-size: 1.4rem; margin: 0; color: var(--navy); line-height: 1.2; }
+        .logo span { display: block; font-family: var(--font-body); font-size: 0.8rem; font-weight: 400; color: var(--text-light); letter-spacing: 2px; }
+        
+        nav { display: flex; align-items: center; gap: 1.5rem; }
+        nav ul { list-style: none; display: flex; gap: 1.5rem; align-items: center; margin: 0; }
+        nav a { font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dark); }
+        nav a:hover { color: var(--maroon); }
+        .nav-cta { background-color: var(--navy); color: var(--white) !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+        
+        #langBtn { background: var(--beige); color: var(--navy); border: 1px solid var(--navy); padding: 0.4rem 1rem; border-radius: 20px; font-weight: bold; cursor: pointer; transition: 0.3s; font-family: var(--font-ml); }
+        #langBtn:hover { background: var(--navy); color: var(--white); }
+
+        /* Mobile Menu Toggle Icon */
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--navy); user-select: none; }
+
+        /* --- Hero Section --- */
+        .hero { background: linear-gradient(rgba(15, 37, 65, 0.75), rgba(15, 37, 65, 0.85)), url('photo1.jpg') center/cover; color: var(--white); text-align: center; padding: 8rem 2rem; background-position: center 30%; }
+        .hero h2 { color: var(--gold); font-family: var(--font-subheading); font-style: italic; font-weight: 400; font-size: 1.5rem; margin-bottom: 1rem; }
+        .hero h1 { color: var(--white); font-size: 3.5rem; max-width: 800px; margin: 0 auto 1.5rem auto; line-height: 1.2; }
+        .hero p { color: var(--beige); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem auto; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; }
+
+        /* --- Layout Grids & Titles --- */
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.5rem; position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background-color: var(--maroon); }
+        .section-title p { font-family: var(--font-subheading); font-style: italic; color: var(--gold); font-size: 1.2rem; margin-top: 0.5rem; }
+
+        .split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .split-text h3 { font-size: 2rem; color: var(--navy); }
+        .split-image img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 8px solid var(--white); }
+        .bg-beige { background-color: var(--beige); }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        
+        .feature-card { background-color: var(--white); padding: 2.5rem; text-align: center; border-top: 4px solid var(--navy); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-card h4 { color: var(--maroon); font-size: 1.2rem; margin-bottom: 1rem; }
+        .feature-card p { font-size: 0.95rem; margin-bottom: 0; }
+
+        /* --- Panchanga Pillars Grid --- */
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .pillar-item { background: var(--beige); padding: 1.5rem; border-radius: 6px; border-left: 4px solid var(--gold); text-align: left; }
+        .pillar-item h4 { color: var(--navy); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .pillar-item p { font-size: 0.95rem; margin-bottom: 0; color: var(--text-dark); line-height: 1.5; }
+
+        /* --- Values List --- */
+        .values-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+        .values-list li { position: relative; padding-left: 1.5rem; font-family: var(--font-subheading); color: var(--navy); font-size: 1.1rem; font-weight: 600; }
+        .values-list li::before { content: '❖'; position: absolute; left: 0; color: var(--gold); }
+
+        /* --- Sponsor Banner --- */
+        .sponsor-banner { background-color: var(--navy); color: var(--white); text-align: center; padding: 5rem 2rem; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+        .sponsor-banner h2 { color: var(--gold); font-size: 2.5rem; margin-bottom: 1rem; }
+        .sponsor-banner p { color: var(--beige); max-width: 800px; margin: 0 auto 2rem auto; font-size: 1.15rem; line-height: 1.8; }
+
+        /* --- Gallery Section --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-item { width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 4px; transition: transform 0.3s ease; }
+        .gallery-item:hover { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        /* Lightbox */
+        #lightbox { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15, 37, 65, 0.95); }
+        #lightbox-img { margin: auto; display: block; max-width: 90%; max-height: 80vh; border: 4px solid white; }
+        .close-lightbox { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+
+        /* --- Footer --- */
+        footer { background-color: var(--navy); color: var(--beige); padding: 4rem 2rem 2rem 2rem; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 3rem; margin-bottom: 2rem; }
+        .footer-col h4 { color: var(--gold); font-family: var(--font-body); text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; margin-bottom: 1.5rem; }
+        .footer-col p, .footer-col a { color: var(--beige); font-size: 0.95rem; margin-bottom: 0.5rem; display: block; }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom { text-align: center; font-size: 0.85rem; color: rgba(244, 238, 225, 0.6); }
+
+        /* --- Responsive Design (Mobile) --- */
+        @media (max-width: 992px) { 
+            .split-section { grid-template-columns: 1fr; } 
+            .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } 
+            .hero h1 { font-size: 2.8rem; } 
+        }
+        
+        @media (max-width: 768px) { 
+            .header-logo { height: 40px; }
+            .logo h1 { font-size: 1.1rem; }
+            .logo span { font-size: 0.7rem; }
+            .nav-container { padding: 1rem; }
+            
+            /* Hamburger Menu Logic */
+            .menu-toggle { display: block; }
+            nav ul { 
+                display: none; 
+                position: absolute; 
+                top: 100%; 
+                left: 0; 
+                width: 100%; 
+                background-color: var(--white); 
+                flex-direction: column; 
+                padding: 1.5rem 0; 
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1); 
+                border-top: 1px solid var(--beige);
+            }
+            nav ul.active { display: flex; } /* Shows menu when toggled */
+            nav ul li { margin-bottom: 1rem; }
+            
+            .grid-3, .grid-4, .values-list { grid-template-columns: 1fr; } 
+            .footer-grid { grid-template-columns: 1fr; } 
+            .hero h1 { font-size: 2.2rem; } 
+            .sponsor-banner h2 { font-size: 2rem; } 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#" style="display: flex; align-items: center; gap: 15px;">
+                    <img src="logo.jpg" alt="Logo" class="header-logo">
+                    <div>
+                        <h1 data-en="Sree Sankara Vidyamandiram" data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം">Sree Sankara Vidyamandiram</h1>
+                        <span data-en="KALPETTA, WAYANAD" data-ml="കല്പറ്റ, വയനാട്">KALPETTA, WAYANAD</span>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <button id="langBtn" onclick="toggleLanguage()">മലയാളം</button>
+                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+                <ul id="nav-menu">
+                    <li><a href="#about" data-en="About" data-ml="ഞങ്ങളെക്കുറിച്ച്">About</a></li>
+                    <li><a href="#academics" data-en="Academics" data-ml="പഠനം">Academics</a></li>
+                    <li><a href="#holistic" data-en="Holistic Growth" data-ml="സമഗ്ര വളർച്ച">Holistic Growth</a></li>
+                    <li><a href="#facilities" data-en="Facilities" data-ml="സൗകര്യങ്ങൾ">Facilities</a></li>
+                    <li><a href="#gallery" data-en="Gallery" data-ml="ചിത്രശാല">Gallery</a></li>
+                    <li><a href="tel:9744124309" class="nav-cta" data-en="Admissions" data-ml="അഡ്മിഷൻ">Admissions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2 data-en="Established 2000" data-ml="സ്ഥാപിതം 2000">Established 2000</h2>
+        <h1 data-en="Rooted in Values, Growing in Excellence" data-ml="മൂല്യങ്ങളിൽ വേരൂന്നി, മികവിൽ വളരുന്നു">Rooted in Values, Growing in Excellence</h1>
+        <p data-en="Providing a nurturing, disciplined, and inspiring learning environment guided by the educational vision of Bharatheeya Vidyanikethan." data-ml="ഭാരതീയ വിദ്യാനികേതൻ്റെ വിദ്യാഭ്യാസ ദർശനത്താൽ നയിക്കപ്പെടുന്ന ഒരു പഠനാന്തരീക്ഷം.">Providing a nurturing, disciplined, and inspiring learning environment guided by the educational vision of Bharatheeya Vidyanikethan.</p>
+        <div class="hero-buttons">
+            <a href="tel:9744124309" class="btn btn-primary" data-en="Call to Enquire: 9744124309" data-ml="വിളിക്കാൻ: 9744124309">Call to Enquire: 9744124309</a>
+            <a href="#about" class="btn btn-outline" data-en="Explore the School" data-ml="കൂടുതൽ അറിയാൻ">Explore the School</a>
+        </div>
+    </section>
+
+    <section class="section-padding bg-beige" id="trust">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Why Choose Us" data-ml="എന്തുകൊണ്ട് ഞങ്ങളെ തിരഞ്ഞെടുക്കണം">Why Choose Us</h2>
+                <p data-en="A Serious Commitment to Academic and Character Development" data-ml="പഠനത്തിലും സ്വഭാവരൂപീകരണത്തിലുമുള്ള ഞങ്ങളുടെ പ്രതിബദ്ധത">A Serious Commitment to Academic and Character Development</p>
+            </div>
+            <div class="grid-3">
+                <div class="feature-card">
+                    <h4 data-en="NCERT-Based Learning" data-ml="NCERT അടിസ്ഥാനമാക്കിയുള്ള പഠനം">NCERT-Based Learning</h4>
+                    <p data-en="A rigorous, structured academic foundation aligned with national standards, setting students up for lifelong intellectual growth." data-ml="ദേശീയ മാനദണ്ഡങ്ങൾക്ക് അനുസൃതമായ ചിട്ടയായ അക്കാദമിക് അടിത്തറ, വിദ്യാർത്ഥികളെ ആജീവനാന്ത ബൗദ്ധിക വളർച്ചയ്ക്ക് സജ്ജമാക്കുന്നു.">A rigorous, structured academic foundation aligned with national standards, setting students up for lifelong intellectual growth.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-en="Value-Based Education" data-ml="മൂല്യാധിഷ്ഠിത വിദ്യാഭ്യാസം">Value-Based Education</h4>
+                    <p data-en="Blending modern learning with deeply rooted Indian culture, fostering moral integrity and spiritual awareness." data-ml="ആധുനിക പഠനത്തെ ഇന്ത്യൻ സംസ്കാരവുമായി സമന്വയിപ്പിച്ച്, ധാർമ്മിക സമഗ്രതയും ആത്മീയ അവബോധവും വളർത്തുന്നു.">Blending modern learning with deeply rooted Indian culture, fostering moral integrity and spiritual awareness.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-en="Personal Attention" data-ml="വ്യക്തിപരമായ ശ്രദ്ധ">Personal Attention</h4>
+                    <p data-en="A warm, friendly learning ambience where dedicated teachers ensure individual care and disciplined guidance for every child." data-ml="സമർപ്പിതരായ അധ്യാപകർ ഓരോ കുട്ടിക്കും വ്യക്തിപരമായ ശ്രദ്ധയും അച്ചടക്കത്തോടെയുള്ള മാർഗ്ഗനിർദ്ദേശവും ഉറപ്പാക്കുന്ന സൗഹൃദപരമായ പഠനാന്തരീക്ഷം.">A warm, friendly learning ambience where dedicated teachers ensure individual care and disciplined guidance for every child.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="about">
+        <div class="container split-section">
+            <div class="split-image">
+                <img src="photo2.jpeg" alt="School Campus Environment">
+            </div>
+            <div class="split-text">
+                <h3 data-en="A Respected Institution in Wayanad" data-ml="വയനാട്ടിലെ ഒരു മികച്ച വിദ്യാഭ്യാസ സ്ഥാപനം">A Respected Institution in Wayanad</h3>
+                <p data-en="Established in the year 2000, Sree Sankara Vidyamandiram stands as a beacon of culturally rich, harmonious, and value-centered education in Kalpetta. Guided by the noble philosophy of Bharatheeya Vidyanikethan, our institution serves families across nearby panchayats with a mission to build physically, mentally, and spiritually developed learners." data-ml="2000-ൽ സ്ഥാപിതമായ ശ്രീ ശങ്കര വിദ്യാമന്ദിരം, കല്പറ്റയിൽ സാംസ്കാരിക സമ്പന്നവും മൂല്യാധിഷ്ഠിതവുമായ വിദ്യാഭ്യാസത്തിന്റെ ഒരു ദീപസ്തംഭമായി നിലകൊള്ളുന്നു. ഭാരതീയ വിദ്യാനികേതൻ്റെ ഉദാത്തമായ തത്വശാസ്ത്രത്താൽ നയിക്കപ്പെടുന്ന ഈ സ്ഥാപനം, ശാരീരികവും മാനസികവും ആത്മീയവുമായി വികസിച്ച പഠിതാക്കളെ വാർത്തെടുക്കുക എന്ന ലക്ഷ്യത്തോടെ പ്രവർത്തിക്കുന്നു.">Established in the year 2000, Sree Sankara Vidyamandiram stands as a beacon of culturally rich, harmonious, and value-centered education in Kalpetta. Guided by the noble philosophy of Bharatheeya Vidyanikethan, our institution serves families across nearby panchayats with a mission to build physically, mentally, and spiritually developed learners.</p>
+                <p data-en="Our vision transcends textbook learning. We prepare students for life and service by instilling our core pillars:" data-ml="ഞങ്ങളുടെ ദർശനം പാഠപുസ്തക പഠനത്തിനപ്പുറമാണ്. വിദ്യാർത്ഥികളെ ജീവിതത്തിനും സേവനത്തിനും സജ്ജമാക്കുന്നതിനായി ഞങ്ങളുടെ അടിസ്ഥാന സ്തംഭങ്ങൾ അവരിൽ വളർത്തുന്നു:">Our vision transcends textbook learning. We prepare students for life and service by instilling our core pillars:</p>
+                <ul class="values-list">
+                    <li data-en="Knowledge" data-ml="അറിവ്">Knowledge</li>
+                    <li data-en="Values" data-ml="മൂല്യങ്ങൾ">Values</li>
+                    <li data-en="Discipline" data-ml="അച്ചടക്കം">Discipline</li>
+                    <li data-en="Awareness" data-ml="അവബോധം">Awareness</li>
+                    <li data-en="Spiritual Guidance" data-ml="ആത്മീയ മാർഗ്ഗനിർദ്ദേശം">Spiritual Guidance</li>
+                    <li data-en="Personal Care" data-ml="വ്യക്തിപരമായ ശ്രദ്ധ">Personal Care</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-beige" id="academics">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Academic Excellence" data-ml="മികച്ച വിദ്യാഭ്യാസം">Academic Excellence</h2>
+                <p data-en="Nurturing Minds from Pre-KG to Class 7" data-ml="പ്രീ-കെജി മുതൽ ഏഴാം ക്ലാസ്സ് വരെ">Nurturing Minds from Pre-KG to Class 7</p>
+            </div>
+            <div class="split-section" style="direction: rtl;">
+                <div class="split-image">
+                    <img src="photo3.jpeg" alt="Classroom Learning" style="direction: ltr;">
+                </div>
+                <div class="split-text" style="direction: ltr;">
+                    <p data-en="We provide a strong, NCERT-based curriculum designed to cultivate intellectual curiosity and a deep love for learning. Our supportive and student-friendly classroom approach ensures that education is imparted with both rigor and compassion." data-ml="ബൗദ്ധിക ജിജ്ഞാസയും പഠനത്തോടുള്ള അഗാധമായ സ്നേഹവും വളർത്താൻ രൂപകൽപ്പന ചെയ്ത ശക്തമായ, എൻസിഇആർടി അടിസ്ഥാനമാക്കിയുള്ള പാഠ്യപദ്ധതി ഞങ്ങൾ നൽകുന്നു. വിദ്യാർത്ഥി സൗഹൃദ ക്ലാസ്സ് റൂം സമീപനമാണ് ഞങ്ങളുടേത്.">We provide a strong, NCERT-based curriculum designed to cultivate intellectual curiosity and a deep love for learning. Our supportive and student-friendly classroom approach ensures that education is imparted with both rigor and compassion.</p>
+                    <p data-en="Recognizing the unique potential of each child, our dedicated educators provide personalized attention to learners. We are continuously expanding our academic horizons, building an aspirational framework for the future growth of our student body." data-ml="ഓരോ കുട്ടിയുടെയും അതുല്യമായ കഴിവുകൾ തിരിച്ചറിഞ്ഞ്, ഞങ്ങളുടെ അധ്യാപകർ അവർക്ക് വ്യക്തിപരമായ ശ്രദ്ധ നൽകുന്നു. വിദ്യാർത്ഥികളുടെ ഭാവി വളർച്ചയ്ക്കായി ഞങ്ങൾ നിരന്തരം ഞങ്ങളുടെ അക്കാദമിക് ചക്രവാളങ്ങൾ വികസിപ്പിക്കുന്നു.">Recognizing the unique potential of each child, our dedicated educators provide personalized attention to learners. We are continuously expanding our academic horizons, building an aspirational framework for the future growth of our student body.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="holistic">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Holistic Education" data-ml="സമഗ്ര വിദ്യാഭ്യാസം">Holistic Education</h2>
+                <p data-en="Developing the Child Intellectually, Physically, Socially, Morally, and Spiritually" data-ml="കുട്ടികളുടെ ബൗദ്ധികവും ശാരീരികവും ധാർമ്മികവും ആത്മീയവുമായ വികസനം">Developing the Child Intellectually, Physically, Socially, Morally, and Spiritually</p>
+            </div>
+            
+            <div style="max-width: 1000px; margin: 0 auto 4rem auto; padding: 2.5rem; background-color: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 8px;">
+                <h3 data-en="The 5 Pillars of Panchanga Shikshan" data-ml="പഞ്ചാംഗ ശിക്ഷണം: പ്രധാന അഞ്ച് ഘടകങ്ങൾ" style="text-align: center; color: var(--maroon); margin-bottom: 1.5rem; font-size: 1.8rem;">The 5 Pillars of Panchanga Shikshan</h3>
+                
+                <p data-en="At Vidyanikethan schools, Panchanga Shikshan is integrated with regular academics to instill a profound sense of values. The guiding principle is that textbook education alone is insufficient for holistic development. The primary objective is to nurture children based on Indian culture and values. The five core components are:" data-ml="വിദ്യാനികേതൻ വിദ്യാലയങ്ങളിൽ വിദ്യാർത്ഥികളിൽ മൂല്യബോധം വളർത്തുന്നതിനായി പഠനത്തോടൊപ്പം പഞ്ചാംഗ ശിക്ഷണവും നൽകി വരുന്നു. കുട്ടികളുടെ സമ്പൂർണ്ണ വളർച്ചയ്ക്ക് പാഠപുസ്തകങ്ങളിലൂടെ ലഭിക്കുന്ന വിദ്യാഭ്യാസം മാത്രം പോരാ എന്നതാണ് ഇതിന്റെ അടിസ്ഥാന തത്വം. ഭാരതീയ സംസ്കാരവും മൂല്യങ്ങളും അടിസ്ഥാനമാക്കി കുട്ടികളെ വളർത്തിയെടുക്കുക എന്നതാണ് ഇതിന്റെ പ്രധാന ലക്ഷ്യം. പഞ്ചാംഗ ശിക്ഷണത്തിലെ പ്രധാന അഞ്ച് ഘടകങ്ങൾ:" style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; color: var(--text-dark);">
+                    At Vidyanikethan schools, Panchanga Shikshan is integrated with regular academics to instill a profound sense of values. The guiding principle is that textbook education alone is insufficient for holistic development. The primary objective is to nurture children based on Indian culture and values. The five core components are:
+                </p>
+
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <h4 data-en="Physical Education (ശാരീരികം)" data-ml="ശാരീരികം (Physical Education)">Physical Education (ശാരീരികം)</h4>
+                        <p data-en="Exercises and sports training aimed at increasing children's physical fitness and vitality." data-ml="കുട്ടികളുടെ കായികക്ഷമതയും ഊർജ്ജസ്വലതയും വർദ്ധിപ്പിക്കുന്നതിനുള്ള വ്യായാമങ്ങളും കായിക പരിശീലനങ്ങളും.">Exercises and sports training aimed at increasing children's physical fitness and vitality.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Yoga (യോഗ)" data-ml="യോഗ (Yoga)">Yoga (യോഗ)</h4>
+                        <p data-en="Yogasanas and pranayama practice designed to enhance mental concentration and health." data-ml="മനസ്സിന്റെ ഏകാഗ്രതയ്ക്കും ആരോഗ്യത്തിനും ഉതകുന്ന യോഗാസനങ്ങളും പ്രാണായാമ പരിശീലനവും.">Yogasanas and pranayama practice designed to enhance mental concentration and health.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Music (സംഗീതം)" data-ml="സംഗീതം (Music)">Music (സംഗീതം)</h4>
+                        <p data-en="Training in light music, patriotic songs, and classical music to foster creativity in children." data-ml="കുട്ടികളിൽ സർഗ്ഗാത്മകത വളർത്താനായി ലളിതഗാനങ്ങൾ, ദേശഭക്തിഗാനങ്ങൾ, ശാസ്ത്രീയ സംഗീതം എന്നിവയുടെ പരിശീലനം.">Training in light music, patriotic songs, and classical music to foster creativity in children.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Sanskrit (സംസ്കൃതം)" data-ml="സംസ്കൃതം (Sanskrit)">Sanskrit (സംസ്കൃതം)</h4>
+                        <p data-en="Learning Sanskrit to deeply understand Indian heritage and gain linguistic proficiency." data-ml="ഭാരതീയ പൈതൃകം മനസ്സിലാക്കാനും ഭാഷാപരിജ്ഞാനം നേടാനുമുള്ള സംസ്കൃത പഠനം.">Learning Sanskrit to deeply understand Indian heritage and gain linguistic proficiency.</p>
+                    </div>
+                    <div class="pillar-item">
+                        <h4 data-en="Moral Education (നൈതികം)" data-ml="നൈതികം (Moral Education)">Moral Education (നൈതികം)</h4>
+                        <p data-en="Value-based education to cultivate ethical values, patriotism, and good virtues in children." data-ml="ധാർമ്മികമൂല്യങ്ങൾ, ദേശസ്നേഹം, സദ്ഗുണങ്ങൾ എന്നിവ കുട്ടികളിൽ വളർത്തിയെടുക്കുന്നതിനുള്ള മൂല്യാധിഷ്ഠിത വിദ്യാഭ്യാസം.">Value-based education to cultivate ethical values, patriotism, and good virtues in children.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-4">
+                <div class="feature-card">
+                    <h4 data-en="Physical Education & Yoga" data-ml="കായികവിദ്യാഭ്യാസവും യോഗയും">Physical Education & Yoga</h4>
+                    <p data-en="Fostering physical vitality and mental tranquility through structured daily practices." data-ml="ചിട്ടയായ ദൈനംദിന പരിശീലനങ്ങളിലൂടെ ശാരീരിക ആരോഗ്യവും മാനസിക ശാന്തതയും വളർത്തുന്നു.">Fostering physical vitality and mental tranquility through structured daily practices.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-en="Sanskrit & Culture" data-ml="സംസ്കൃതവും സംസ്കാരവും">Sanskrit & Culture</h4>
+                    <p data-en="Connecting students to their heritage through language and cultural personality development." data-ml="ഭാഷയിലൂടെയും സാംസ്കാരിക വ്യക്തിത്വ വികസനത്തിലൂടെയും വിദ്യാർത്ഥികളെ അവരുടെ പൈതൃകവുമായി ബന്ധിപ്പിക്കുന്നു.">Connecting students to their heritage through language and cultural personality development.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-en="Vedic Mathematics" data-ml="വേദിക് മാത്തമാറ്റിക്സ്">Vedic Mathematics</h4>
+                    <p data-en="Enhancing numerical agility and cognitive sharpness with traditional mathematical techniques." data-ml="പരമ്പരാഗത ഗണിതശാസ്ത്ര സങ്കേതങ്ങളിലൂടെ സംഖ്യാപരമായ നൈപുണ്യവും വൈജ്ഞാനിക മൂർച്ചയും വർദ്ധിപ്പിക്കുന്നു.">Enhancing numerical agility and cognitive sharpness with traditional mathematical techniques.</p>
+                </div>
+                <div class="feature-card">
+                    <h4 data-en="Moral & Spiritual Growth" data-ml="ധാർമ്മികവും ആത്മീയവുമായ വളർച്ച">Moral & Spiritual Growth</h4>
+                    <p data-en="Instilling timeless ethics, able spiritual guidance, and a service-minded approach to life." data-ml="കാലാതീതമായ ധാർമ്മികത, മികച്ച ആത്മീയ മാർഗ്ഗനിർദ്ദേശം, സേവനമനസ്കത എന്നിവ കുട്ടികളിൽ വളർത്തുന്നു.">Instilling timeless ethics, able spiritual guidance, and a service-minded approach to life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-beige" id="facilities">
+        <div class="container split-section">
+            <div class="split-text">
+                <h3 data-en="Our Learning Environment" data-ml="ഞങ്ങളുടെ പഠനാന്തരീക്ഷം">Our Learning Environment</h3>
+                <p data-en="The campus of Sree Sankara Vidyamandiram is designed to be a safe, supportive, and highly inspiring setting for youth. We prioritize a student-friendly environment where every space—from our well-ventilated classrooms to specialized activity support areas—is optimized for learning and growth." data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരത്തിന്റെ ക്യാമ്പസ് വിദ്യാർത്ഥികൾക്ക് സുരക്ഷിതവും പിന്തുണ നൽകുന്നതും വളരെ പ്രചോദനാത്മകവുമായ രീതിയിലാണ് രൂപകൽപ്പന ചെയ്തിരിക്കുന്നത്. ക്ലാസ് മുറികൾ മുതൽ പ്രത്യേക പ്രവർത്തന മേഖലകൾ വരെയുള്ള ഓരോ ഇടവും പഠനത്തിനും വളർച്ചയ്ക്കും അനുയോജ്യമാക്കിയ ഒരു വിദ്യാർത്ഥി സൗഹൃദ അന്തരീക്ഷത്തിനാണ് ഞങ്ങൾ മുൻഗണന നൽകുന്നത്.">The campus of Sree Sankara Vidyamandiram is designed to be a safe, supportive, and highly inspiring setting for youth. We prioritize a student-friendly environment where every space—from our well-ventilated classrooms to specialized activity support areas—is optimized for learning and growth.</p>
+                <p data-en="With an accessible Principal’s room and collaborative Staff rooms, our administration and educators remain closely connected to the daily academic life, ensuring uncompromised discipline and continuous mentorship." data-ml="എളുപ്പത്തിൽ സമീപിക്കാവുന്ന പ്രിൻസിപ്പലിന്റെ മുറിയും സ്റ്റാഫ് റൂമുകളും വഴി, ഞങ്ങളുടെ ഭരണസമിതിയും അധ്യാപകരും വിദ്യാർത്ഥികളുമായി വളരെ അടുത്തുനിൽക്കുന്നു, മികച്ച അച്ചടക്കവും മാർഗ്ഗനിർദ്ദേശവും ഉറപ്പാക്കുന്നു.">With an accessible Principal’s room and collaborative Staff rooms, our administration and educators remain closely connected to the daily academic life, ensuring uncompromised discipline and continuous mentorship.</p>
+            </div>
+            <div class="split-image">
+                <img src="photo4.jpeg" alt="School Facilities">
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsor-banner" id="sponsor">
+        <div class="container">
+            <h2 data-en="Sponsor a Child's Education" data-ml="ഒരു വിദ്യാർത്ഥിയെ സ്പോൺസർ ചെയ്യുക">Sponsor a Child's Education</h2>
+            <p data-en="Sree Sankara Vidyamandiram is deeply rooted in Indian traditions and values. Many of our bright students come from economically backward families in our region. You can make a profound difference by sponsoring a child's education for one academic year with a small contribution. If you wish to offer your support and consent, please contact the school administration." data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം ഭാരതീയ പാരമ്പര്യങ്ങളിലും മൂല്യങ്ങളിലും വേരൂന്നിയതാണ്. നമ്മുടെ മിടുക്കരായ പല വിദ്യാർത്ഥികളും സാമ്പത്തികമായി പിന്നോക്കം നിൽക്കുന്ന കുടുംബങ്ങളിൽ നിന്നുള്ളവരാണ്. ഒരു ചെറിയ സംഭാവന നൽകി ഒരു കുട്ടിയുടെ ഒരു വർഷത്തെ വിദ്യാഭ്യാസച്ചെലവ് സ്പോൺസർ ചെയ്യുന്നതിലൂടെ നിങ്ങൾക്ക് അവരുടെ ജീവിതത്തിൽ വലിയ മാറ്റം വരുത്താൻ സാധിക്കും. നിങ്ങൾക്ക് പിന്തുണ നൽകാൻ താല്പര്യമുണ്ടെങ്കിൽ ദയവായി സ്കൂൾ അഡ്മിനിസ്ട്രേഷനുമായി ബന്ധപ്പെടുക.">Sree Sankara Vidyamandiram is deeply rooted in Indian traditions and values. Many of our bright students come from economically backward families in our region. You can make a profound difference by sponsoring a child's education for one academic year with a small contribution. If you wish to offer your support and consent, please contact the school administration.</p>
+            <a href="tel:9744124309" class="btn" style="background-color: var(--gold); color: var(--navy); border: none;" data-en="Call to Sponsor: 9744124309" data-ml="സ്പോൺസർ ചെയ്യാൻ വിളിക്കുക: 9744124309">Call to Sponsor: 9744124309</a>
+        </div>
+    </section>
+
+    <section class="section-padding" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-en="Campus Life & Gallery" data-ml="ക്യാമ്പസ് ചിത്രങ്ങൾ">Campus Life & Gallery</h2>
+                <p data-en="Glimpses of our holistic learning environment" data-ml="ഞങ്ങളുടെ പഠനാന്തരീക്ഷത്തിന്റെ നേർക്കാഴ്ചകൾ">Glimpses of our holistic learning environment</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <img src="photo1.jpeg" alt="Gallery Image 1" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo5.jpeg" alt="Gallery Image 5" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo6.jpeg" alt="Gallery Image 6" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo7.jpeg" alt="Gallery Image 7" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo8.jpeg" alt="Gallery Image 8" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo9.jpeg" alt="Gallery Image 9" class="gallery-item" onclick="openLightbox(this.src)">
+                <img src="photo10.jpg" alt="Gallery Image 10" class="gallery-item" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="font-family: var(--font-heading); font-size: 1.5rem; text-transform: none;" data-en="Sree Sankara Vidyamandiram" data-ml="ശ്രീ ശങ്കര വിദ്യാമന്ദിരം">Sree Sankara Vidyamandiram</h4>
+                <p style="margin-top: 1rem; max-width: 400px;" data-en="A value-based school combining modern learning with deep cultural roots, dedicated to the holistic growth of every child." data-ml="ആധുനിക പഠനത്തെ ആഴത്തിലുള്ള സാംസ്കാരിക വേരുകളുമായി സംയോജിപ്പിക്കുന്ന ഒരു മൂല്യാധിഷ്ഠിത വിദ്യാലയം.">A value-based school combining modern learning with deep cultural roots, dedicated to the holistic growth of every child.</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Contact Us" data-ml="ബന്ധപ്പെടുക">Contact Us</h4>
+                <p data-en="Kalpetta, Wayanad, Kerala – 673122" data-ml="കല്പറ്റ, വയനാട്, കേരളം – 673122">Kalpetta, Wayanad,<br>Kerala – 673122</p>
+                <p style="margin-top: 1rem;" data-en="Phone:" data-ml="ഫോൺ:">Phone:</p>
+                <a href="tel:9744124309">9744124309</a>
+                <a href="tel:8075986122">8075986122</a>
+                <p style="margin-top: 1rem;" data-en="Email:" data-ml="ഇമെയിൽ:">Email:</p>
+                <a href="mailto:sreesankaravidhyanikethan43@gmail.com" style="word-break: break-all;">sreesankaravidhyanikethan43@gmail.com</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-en="Admissions" data-ml="അഡ്മിഷൻ">Admissions</h4>
+                <p data-en="Admissions are open for Pre-KG to Class 7. Contact our administration office directly via phone to begin the simple admission process." data-ml="പ്രീ-കെജി മുതൽ ഏഴാം ക്ലാസ്സ് വരെ അഡ്മിഷൻ തുടരുന്നു. കൂടുതൽ വിവരങ്ങൾക്കായി ഫോൺ വഴി ഞങ്ങളുടെ ഓഫീസുമായി ബന്ധപ്പെടുക.">Admissions are open for Pre-KG to Class 7. Contact our administration office directly via phone to begin the simple admission process.</p>
+                <a href="tel:9744124309" class="btn btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;" data-en="Call: 9744124309" data-ml="വിളിക്കുക: 9744124309">Call: 9744124309</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-en="&copy; 2026 Sree Sankara Vidyamandiram, Kalpetta. All Rights Reserved." data-ml="&copy; 2026 ശ്രീ ശങ്കര വിദ്യാമന്ദിരം, കല്പറ്റ. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.">&copy; 2026 Sree Sankara Vidyamandiram, Kalpetta. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Language Toggle Logic ---
+        let currentLang = 'en';
+        
+        function toggleLanguage() {
+            // Swap Language state
+            currentLang = currentLang === 'en' ? 'ml' : 'en';
+            
+            // Update button text
+            const btn = document.getElementById('langBtn');
+            btn.innerText = currentLang === 'en' ? 'മലയാളം' : 'English';
+            
+            // Update Font Family via body class
+            if (currentLang === 'ml') {
+                document.body.classList.add('lang-ml');
+            } else {
+                document.body.classList.remove('lang-ml');
+            }
+
+            // Find all elements with translation data tags and swap text
+            const elements = document.querySelectorAll('[data-en]');
+            elements.forEach(el => {
+                const newText = el.getAttribute(`data-${currentLang}`);
+                if (newText) {
+                    el.innerHTML = newText; // Using innerHTML ensures <br> tags in address stay intact
+                }
+            });
+        }
+
+        // --- Mobile Menu Toggle Logic ---
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Automatically close the mobile menu when a link is clicked
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+
+        // --- Gallery Lightbox Logic ---
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        function openLightbox(imageSrc) {
+            lightbox.style.display = "block";
+            lightboxImg.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+        }
+
+        // Close lightbox if user clicks anywhere outside the image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sree Sankara Vidyamandiram | Kalpetta, Wayanad</title>
